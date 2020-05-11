@@ -1,0 +1,175 @@
+*{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+.content {
+	color: white;
+    background-attachment:fixed;
+    font-size: 170%;
+    background-color: rgba(0,0,0,0.5);
+  	background-color: black;
+    opacity: 0.9;
+    float: left;
+    width: 90%;
+    margin-top: 8%;
+    position: relative;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 2%;
+    border-radius: 4%;
+    box-shadow: 0px 0px 10px white;
+    margin-bottom: 30px;
+}
+.button{
+		border: 5px solid white;
+	padding: 10px 30px;
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+	transition: 0.5s ease;
+	border-radius: 4%;
+    box-shadow: 0px 0px 10px white;
+}
+.button:hover{
+	background-color: #000;
+	color: #fff;
+}
+.box{
+	font-size: 25px;
+	 border-radius: 4%;
+    box-shadow: 0px 0px 10px white;
+    color: black;
+}
+main {
+	text-decoration-color: solid black;
+	margin-left: 10px;
+	margin: 0px;
+	font-family: 'Almendra', serif;
+
+}
+@import url("https://fonts.googleapis.com/css?family=Codystar:300&display=swap");
+body {
+  justify-content: center;
+  align-items: center;
+  font-family: 'Codystar';
+  background: black;
+  background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.neons {
+  margin-top: 120px;
+  text-align: center;
+}
+.neons1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.neons h7 {
+  font-size: 90px;
+	margin-top: 40px;
+  font-weight: bold;
+  -webkit-animation: glowing 2s ease-in-out infinite alternate;
+  -moz-animation: glowing 2s ease-in-out infinite alternate;
+  animation: glowing 2s ease-in-out infinite alternate;
+}
+.neons1 h2{
+	font-size: 40px;
+	line-height: 34px;
+	text-decoration: underline;
+	text-align: center;
+	font-family: 'Yeseva One', cursive;
+	-webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    color: black;
+    text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 90px #00fff2;
+  }
+  to {
+    color: white;
+    text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
+  }
+}
+@-webkit-keyframes glowing {
+  from {
+    color: black;
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  }
+  to {
+    color: white;
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  }
+}
+
+.neons1 h5{
+	font-size: 35px;
+	float: left;
+	color: white;
+	font-family: 'Almendra', serif;
+	text-decoration: underline;
+	-webkit-animation: glowing 2s ease-in-out infinite alternate;
+  -moz-animation: glowing 2s ease-in-out infinite alternate;
+  animation: glowing 2s ease-in-out infinite alternate;
+}
+h6{
+	text-align: center;
+	color: white;
+	font-size: 50px;
+	margin-top: 20px;
+}
+.boxed{
+	width: 700px;
+  	border: 2px solid white;
+  	padding: 10px;
+	font-family: 'Inconsolata', monospace;
+	font-size: 20px;
+    border-radius: 25px;
+    margin-left: 200px;
+    color: white;
+}
+.boxed1{
+	width: 700px;
+	margin-top:  60px;
+  	border: 2px solid white;
+  	padding: 10px;
+  	margin-left: 200px;
+	font-family: 'Almendra', serif;
+	font-size: 20px;
+    border-radius: 25px;
+}
+
+@media all and (max-width : 768px) {
+
+.content {
+	
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+section{
+	text-align: left;
+	font-size: 17px;
+	font-family: 'Almendra', serif;
+}
+.section img{
+	width: 100px;
+	margin-left: 200px;
+}
+.boxed{
+	width: 500px;
+	position: relative;
+	margin-left: 20px;
+   
+}
+.boxed1{
+	width: 500px;
+	position: relative;
+	margin-left: 20px;
+    
+}
+}

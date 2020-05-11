@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TRIGGERS | Syntax</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <link rel="icon" href="./image/icon1.png">
+	<link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+	<style>
+			body{
+				 background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url(./image/bgmain5.jpg);
+                 background-attachment: fixed;
+                 background-size: contain;
+			}
+	</style>
+</head>
+<body>
+	<div class="logo">
+        	<a href="index.html"><img src="./image/connect database.png"></a>	
+    </div>
+    <div class="sidebar">
+    <nav>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <label for="drop-1" class="toggle">Triggers +</label>
+                    <a href="#">Triggers</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="trigbasic.html">Basic Definition</a></li>
+                        <li><a href="syntrig.html">Syntax</a></li>
+                       <li> <label for="drop-3" class="toggle">Deep learning +</label>
+                    <a href="#">Deep learning</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="usetrig.html">Uses</a></li>
+                        <li><a href="typetrig.html">Types And Examples</a></li>
+                        
+                    </ul>
+                </li>
+                    </ul> 
+                </li>
+                <li>
+                <label for="drop-2" class="toggle">Cursors +</label>
+                <a href="#">Cursors</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                        <li><a href="curbasic.html">Basic Definition</a></li>
+                        <li><a href="syncur.html">Syntax</a></li>
+                       
+                    <!-- Second Tier Drop Down -->        
+                    <li><label for="drop-3" class="toggle">Deep learning +</label>
+                    <a href="#">Deep learning</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="usecur.html">Uses</a></li>
+                        <li><a href="typecur.html">Types And Examples</a></li>
+                    
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+       <div class="container">
+   <div class="row">
+      <div class="neons col-12">
+         <h7><em>TRIGGERS</em></h7>
+      </div>
+   </div>
+</div>
+        <div class="content">
+    <main>
+     <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h5><em>Syntax</em></h5>
+      </div>
+   </div>
+</div>
+     <br><br><br>
+    	<p class="boxed">
+        	 CREATE [OR REPLACE ] TRIGGER trigger_name  
+			<br>{BEFORE | AFTER | INSTEAD OF }  
+			<br>{INSERT [OR] | UPDATE [OR] | DELETE}  
+			<br>[OF col_name]  
+			<br>ON table_name  
+			<br>[REFERENCING OLD AS o NEW AS n]  
+			<br>[FOR EACH ROW]  
+			<br>WHEN (condition)   
+			<br>DECLARE 
+   			<br>&emsp;Declaration-statements 
+			<br>BEGIN  
+   			<br>&emsp;Executable-statements 
+			<br>EXCEPTION 
+   			<br>&emsp;Exception-handling-statements 
+			<br>END; 
+			</p>
+            <br><br></main></div>
+            <div class="content">
+    <main>
+     <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h5><em>Explanation</em></h5>
+      </div>
+   </div>
+</div>
+    <br>
+    <p class="boxed1">
+			1.CREATE [OR REPLACE] TRIGGER trigger_name − Creates or replaces an existing trigger with the trigger_name.
+			<br>2. {BEFORE | AFTER | INSTEAD OF} − This specifies when the trigger will be executed. The INSTEAD OF clause is used for creating trigger on a view.
+			<br>3. {INSERT [OR] | UPDATE [OR] | DELETE} − This specifies the DML operation.
+			<br>4. [OF col_name] − This specifies the column name that will be updated.
+			<br>5. [ON table_name] − This specifies the name of the table associated with the trigger.
+			<br>6. [REFERENCING OLD AS o NEW AS n] − This allows you to refer new and old values for various DML statements, such as INSERT, UPDATE, and DELETE.
+			<br>7.[FOR EACH ROW] − This specifies a row-level trigger, i.e., the trigger will be executed for each row being affected. Otherwise the trigger will execute just once when the SQL statement is executed, which is called a table level trigger.
+			<br>8. WHEN (condition) − This provides a condition for rows for which the trigger would fire. This clause is valid only for row-level triggers.
+        </p>
+    </main>
+</div>
+</body>
+</html>

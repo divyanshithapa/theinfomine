@@ -1,0 +1,383 @@
+body {
+	background: #212121;
+	font-size:22px;
+	line-height: 30px;
+	color: white;
+	margin: 0;
+	padding: 0;
+	word-wrap:break-word !important;
+	
+	}
+
+h4 {
+	font-size: 30px;
+	text-align: left;
+	color: white;
+	font-family: 'Almendra', serif;
+	text-decoration: underline;
+}	
+.neons h3{
+  font-size: 60px;
+	line-height: 34px;
+	margin-top: 10px;
+	text-align: center;
+	color: black;
+	font-family: 'Yeseva One', cursive;
+	text-decoration: underline;
+	color: black;
+  font-weight: bold;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+main {
+	text-decoration-color: solid black;
+	margin-left: 10px;
+	margin: 0px;
+
+}
+@import url("https://fonts.googleapis.com/css?family=Codystar:300&display=swap");
+body {
+  justify-content: center;
+  align-items: center;
+  font-family: 'Codystar';
+  background: black;
+  background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.neons {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.neons h1{
+  margin-top: 100px;
+	text-align:center;
+	font-size:90px;
+	line-height: 70px;
+	color: black;
+	font-family: 'Almendra', serif;
+  font-weight: bold;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    color: blue;
+    /*text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 90px #00fff2;*/
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  }
+  to {
+    color: black;
+    text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
+  }
+}
+
+section{
+	text-align: left;
+	font-size: 25px;
+	font-family: 'Almendra', serif;
+}
+.section img{
+	width: 100px;
+	margin-left: 200px;
+}
+table, th, td {
+            border: 1px solid grey;
+        }
+        th, td {
+            padding: 10px;
+            font-size: 25px;
+        }
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+  margin-top: 200px;
+}
+#container {
+	margin: 0 auto;
+	max-width: 890px;
+}
+
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	display: all;
+	margin:0;
+	padding: 0;
+	background-color: black;
+	font-family: 'Niconne', cursive; 
+}
+
+.logo {
+	margin-left: 25px;
+}
+.logo img{
+	float: left;
+	width: 70px;
+	height: 70px;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+.image{
+	margin-left: 670px;
+}
+.image img{
+	width:200px;
+	height: 200px;
+}
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	margin-right: 10px;
+	display:inline-block;
+	float: left;
+	background-color: black;
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:30px;
+	text-decoration:none;
+
+}
+
+
+nav ul li ul li:hover { background: black;transition: 0.3s ease; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	background-color: yellow; 
+	color: black;
+	transition: 0.3s;
+	box-shadow:  0px 0px 10px white;
+	border-radius: 8%;
+
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+	color: black;
+	transition: 0.3s ease;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+	.logo {
+	margin-left: 25px;
+}
+img{
+	float: left;
+	width: 70px;
+	height: 70px;
+}
+
+.boxed{
+	width: 300px;
+  	border: 5px solid black;
+  	padding: 20px;
+  	margin: 20px;
+  	position: relative;
+  	display: inline-block;
+	height: auto;
+	font-family: 'Inconsolata', monospace;
+	font-size: 20px;
+    border-radius: 25px;
+}
+.boxed1{
+	width: 300px;
+  	border: 5px solid black;
+  	padding: 20px;
+  	margin: 20px;
+  	position: relative;
+  	display: inline-block;
+	height: auto;
+	font-family: 'Almendra', serif;
+	font-size: 20px;
+    border-radius: 25px;
+}
+	nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+		background-color: black;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		background-color: black;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:30px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: yellow;
+		color: black;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: black;
+		color: white;
+		transition: 0.3s;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:white;
+		font-size:20px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: black; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		color: white;
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		color: white;
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		color: white;
+		display:block;
+		width: 94%;
+	}
+
+}

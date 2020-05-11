@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TRIGGERS | BASIC DEFINITION</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <link rel="icon" href="./image/icon1.png">
+	<link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+	<style>
+			body{
+				background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url(./image/bgmain5.jpg);
+                background-attachment: fixed;
+                 background-size: contain;
+			}
+	</style>
+</head>
+<body>
+	<div class="logo">
+        	<a href="index.html"><img src="./image/connect database.png"></a>	
+    </div>
+    <nav>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <label for="drop-1" class="toggle">Triggers +</label>
+                    <a href="#">Triggers</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="trigbasic.html">Basic Definition</a></li>
+                        <li><a href="syntrig.html">Syntax</a></li>
+                       <li> <label for="drop-3" class="toggle">Deep learning +</label>
+                    <a href="#">Deep learning</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="usetrig.html">Uses</a></li>
+                        <li><a href="typetrig.html">Types And Example</a></li>
+                        
+                    </ul>
+                </li>
+                    </ul> 
+                </li>
+                <li>
+                <label for="drop-2" class="toggle">Cursors +</label>
+                <a href="#">Cursors</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                        <li><a href="curbasic.html">Basic Definition</a></li>
+                        <li><a href="syncur.html">Syntax</a></li>
+                       
+                    <!-- Second Tier Drop Down -->        
+                    <li><label for="drop-3" class="toggle">Deep learning +</label>
+                    <a href="#">Deep learning</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="usecur.html">Uses</a></li>
+                        <li><a href="typecur.html">Types And Example</a></li>
+                        
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+               <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+               
+            </ul>
+        </nav>
+         <div class="container">
+   <div class="row">
+      <div class="neons col-12">
+         <h7><em>TRIGGERS</em></h7>
+      </div>
+   </div>
+</div>
+<div class="content">
+    <main>
+         <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h2><em>Triggers: Basic Definition</em></h2><br><br>
+      </div>
+   </div>
+</div>
+    <br>
+        <section>
+        	A trigger is a named PL/SQL unit that is stored in the database and executed (fired) in response to a specified event that occurs in the database.
+<br><br>Or in simple words we can say it is a stored procedure in database which automatically invokes whenever a special event in the database occurs.
+<br><br>The specified event is associated with either a table, a view, a schema, or the database, and it is one of the following:
+
+<br><br>1. A database manipulation (DML) statement (DELETE, INSERT, or UPDATE)
+
+<br>2. A database definition (DDL) statement (CREATE, ALTER, or DROP)
+
+<br>3. A database operation (SERVERERROR, LOGON, LOGOFF, STARTUP, or SHUTDOWN)
+</section>
+</main>
+</div>
+</body>
+</html>

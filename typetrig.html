@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TRIGGERS | Types And Examples</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/basic.css">
+  <link rel="icon" href="./image/icon1.png">
+	<link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+	<style>
+			body{
+				 background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url(./image/bgmain5.jpg);
+         background-attachment: fixed;
+                 background-size: contain;
+			}
+	</style>
+</head>
+<body>
+<div class="logo">
+        	<a href="index.html"><img src="./image/connect database.png"></a>	
+    </div>
+    <nav>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <label for="drop-1" class="toggle">Triggers +</label>
+                    <a href="#">Triggers</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="trigbasic.html">Basic Definition</a></li>
+                        <li><a href="syntrig.html">Syntax</a></li>
+                       <li> <label for="drop-3" class="toggle">Deep learning +</label>
+                    <a href="#">Deep learning</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="usetrig.html">Uses</a></li>
+                        <li><a href="typetrig.html">Types And Example</a></li>
+                        
+                    </ul>
+                </li>
+                    </ul> 
+                </li>
+                <li>
+                <label for="drop-2" class="toggle">Cursors +</label>
+                <a href="#">Cursors</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                        <li><a href="curbasic.html">Basic Definition</a></li>
+                        <li><a href="syncur.html">Syntax</a></li>
+                       
+                    <!-- Second Tier Drop Down -->        
+                    <li><label for="drop-3" class="toggle">Deep learning +</label>
+                    <a href="#">Deep learning</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="usecur.html">Uses</a></li>
+                        <li><a href="typecur.html">Types And Example</a></li>
+                        
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                 <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+         <div class="container">
+   <div class="row">
+      <div class="neons col-12">
+         <h7><em>TRIGGERS</em></h7>
+      </div>
+   </div>
+</div>
+        <div class="content">
+    <main>
+       <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h2><em>Types of Triggers</em></h2>
+      </div>
+   </div>
+</div><br><br>
+        <section><h4>There are six different types of triggers:</h4><br>
+		1. Before Update Trigger &emsp;2. After Update Trigger&emsp; 3. Before Insert Trigger&emsp; 4. After Insert Trigger&emsp; 5. Before Delete Trigger&emsp; 6. After Delete Trigger</section><br></main></div>
+     <div class="content">
+    <main>
+		<div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h2><em>Explanation with examples</em></h2>
+      </div>
+   </div>
+</div><br></main></div>
+    <div class="content">
+    <main>
+  	<div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h5><em>1. Before Update Trigger</em></h5>
+      </div>
+   </div>
+</div><br><br><section>
+  		 It is a trigger which enacts before an update is invoked. If we write an update statement, then the actions of the trigger will be performed before the update is implemented.<br>EXAMPLE:<br>These are our tables:<br></section>
+  		 <p class="boxed">
+        	 create table customer (acc_no integer primary key,cust_name varchar(20),avail_balance decimal);
+             <br>create table mini_statement (acc_no integer,  avail_balance decimal,foreign key(acc_no) references customer(acc_no) on delete cascade);  
+        </p><br>
+        <h4>Inserting values in them:</h4><br>
+        <p class="boxed">
+        	insert into customer values (1000, "ABC", 7000);
+        	<br>insert into customer values (1001, "PQR", 12000); 
+        </p><br>
+        <h4>Creating Trigger:</h4><br>
+         <p class="boxed">
+         	create trigger update_cus
+      <br>&emsp;-> before update on customer
+      <br>&emsp;-> for each row
+      <br>&emsp;-> begin
+      <br>&emsp;&emsp;-> insert into mini_statement values (old.acc_no, old.avail_balance);
+      <br>-> end;
+         </p><br>
+         <h4>Invoking Trigger:</h4><br>
+         <p class="boxed">
+         	update customer set avail_balance = avail_balance + 3000 where acc_no = 1001;
+			<br>update customer set avail_balance = avail_balance + 3000 where acc_no = 1000; 
+         </p><br>
+         <h4>OUTPUT:</h4><br>
+         <p class="boxed">
+         	select *from mini_statement;
+<br>+--------+---------------+
+<br>| acc_no | avail_balance |
+<br>+--------+---------------+
+<br>|   1001 &ensp;&ensp;|         12000&emsp;&emsp;&emsp;&emsp;&nbsp;|
+<br>|   1000 &ensp;&ensp;|          7000&emsp;&emsp;&emsp;&emsp;&emsp;|
+<br>+--------+---------------+
+<br>2 rows in set (0.0007 sec) 
+         </p><br><br></main></div>
+<div class="content">
+    <main>
+      <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h5><em>2. After Update Trigger:</em></h5>
+      </div>
+   </div>
+</div><br><br>
+<section>
+       This trigger is invoked after an updation occurs. (i.e., it gets implemented after an update statement is executed.).<br>EXAMPLE:<br>Creating another table:<br></section>
+       <p class="boxed">
+           create table micro_statement (acc_no integer,avail_balance decimal,foreign key(acc_no) references customer(acc_no) on delete cascade);
+         </p><br>
+        <h4>Inserting values in it:</h4><br>
+        <p class="boxed">
+          insert into customer values (1002, "JKL", 4500);
+        </p><br>
+        <h4>Creating Trigger:</h4><br>
+         <p class="boxed">
+          create trigger update_after
+      <br>&emsp;-> after update on customer
+      <br>&emsp;-> for each row
+      <br>&emsp;-> begin
+      <br>&emsp;&emsp;-> insert into micro_statement values(new.acc_no, new.avail_balance);
+      <br>-> end;
+         </p><br>
+         <h4>Invoking Trigger:</h4><br>
+         <p class="boxed">
+          update customer set avail_balance = avail_balance + 1500 where acc_no = 1002; 
+         </p><br>
+         <h4>OUTPUT:</h4><br>
+         <p class="boxed">
+          select *from micro_statement;
+<br>+--------+---------------+
+<br>| acc_no | avail_balance |
+<br>+--------+---------------+
+<br>|   1002 &ensp;&ensp;|          6000&emsp;&emsp;&emsp;&emsp;&emsp;|
+<br>+--------+---------------+
+<br>2 rows in set (0.0007 sec) 
+         </p></main></div>
+         <div class="content">
+    <main>
+      <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h5><em>3. Before Insert Trigger:</em></h5>
+      </div>
+   </div>
+</div><br><br>
+         <section>
+  		  This trigger is invoked before an insert, or before an insert statement is executed.<br>EXAMPLE:<br>Table:<br></section>
+  		 <p class="boxed">
+        	 create table contact (cid INT (11) NOT NULL AUTO_INCREMENT,name VARCHAR (30) NOT NULL, cr_date DATE, cr_by VARCHAR(30), CONSTRAINT contact_pk PRIMARY KEY (cid)); 
+        </p><br>
+        <h4>Creating Trigger:</h4><br>
+         <p class="boxed">
+         	create trigger contact_before_insert
+      <br>&emsp;-> before insert on contact
+      <br>&emsp;-> for each row
+      <br>&emsp;-> begin
+      <br>&emsp;&emsp;-> DECLARE vUser varchar(50);
+      <br>&emsp;&emsp;select USER() into vUser;
+      <br>&emsp;&emsp;SET NEW.cr_date = SYSDATE();
+      <br>&emsp;&emsp; SET NEW.cr_by = vUser;
+      <br>end;
+         </p><br>
+         <h4>Invoking Trigger:</h4><br>
+         <p class="boxed">
+         	insert into contacts values (1, "ABC", str_to_date ("19-08-1999", "%d-%m-%Y"),str_to_date ("17-03-2018", "%d-%m-%Y"), "xyz"); 
+		</p><br>
+         <h4>OUTPUT:</h4><br>
+         <p class="boxed">
+         	select *from contact;
+        <br>+-----+-------+--------+--------------+
+		<br>| cid | name&emsp;|cr_date |&nbsp;cr_by &emsp;&emsp;&emsp;&nbsp;|
+		<br>+-----+-------+--------+--------------+
+		<br>|   1 &emsp;| ABC &emsp;| 11-5-19|root@localhost|
+		<br>+-----+-------+--------+--------------+ 
+         </p><br><br></main></div>
+          <div class="content">
+    <main>
+      <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h5><em>4. After Insert Trigger:</em></h5>
+      </div>
+   </div>
+</div><br><br>
+<section>
+       This trigger gets invoked after an insert is implemented.<br>EXAMPLE:<br>Tables:<br></section>
+       <p class="boxed">
+           create table contacts (contact_id int (11) NOT NULL AUTO_INCREMENT,  last_name VARCHAR(30) NOT NULL, first_name VARCHAR(25), birthday DATE, CONSTRAINT contacts_pk PRIMARY KEY (contact_id));
+<br>create table contacts_audit (contact_id integer,created_date date,created_by varchar (30));              
+         </p><br>
+        <h4>Creating Trigger:</h4><br>
+         <p class="boxed">
+          create trigger contacts_after_insert
+      <br>&emsp;-> after insert on contacts
+      <br>&emsp;-> for each row
+      <br>&emsp;-> begin
+      <br>&emsp;&emsp;-> DECLARE vUser varchar(50); 
+      <br>&emsp;&emsp;SELECT USER() into vUser;
+      <br>&emsp;&emsp;INSERT into contacts_audit( contact_id,created_date,created_by)VALUES( NEW.contact_id,SYSDATE(), vUser );
+      <br>-> end;
+         </p><br>
+         <h4>Invoking Trigger By Insserting Values:</h4><br>
+         <p class="boxed">
+          insert into contacts values (1, "DEF", "ABC",str_to_date("20-06-1999", "%d-%m-%Y")); 
+         </p><br>
+         <h4>OUTPUT:</h4><br>
+         <p class="boxed">
+          select *from contacts_audit;
+          <br>+------------+--------------+----------------+
+      <br>| contact_id | created_date | created_by  &emsp;&ensp;   |
+      <br>+------------+--------------+----------------+
+      <br>|  &ensp;1&emsp;&emsp;&emsp;&emsp; | 2019-05-11 &ensp;  | root@localhost&ensp;|
+      <br>+------------+--------------+----------------+
+      <br>1 row in set (0.0006 sec) 
+         </p><br></main></div>
+         <div class="content">
+    <main>
+        <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h5><em>5. Before Delete Trigger:</em></h5>
+      </div>
+   </div>
+</div><br><br>
+         <section>
+  		  This trigger is invoked before a delete occurs, or before deletion statement is implemented.<br>EXAMPLE:<br>Tables:<br></section>
+  		 <p class="boxed">
+        	create table contacts (contact_id int (11) NOT NULL AUTO_INCREMENT,  last_name VARCHAR(30) NOT NULL, first_name VARCHAR(25), birthday DATE, CONSTRAINT contacts_pk PRIMARY KEY (contact_id));
+<br>create table contacts_audit (contact_id integer,created_date date,created_by varchar (30));
+        </p><br>
+        <h4>Creating Trigger:</h4><br>
+         <p class="boxed">
+         	create trigger contacts_before_delete
+      <br>&emsp;-> before delete on contact
+      <br>&emsp;-> for each row
+      <br>&emsp;-> begin
+      <br>&emsp;&emsp;-> DECLARE vUser varchar(50);
+      <br>&emsp;&emsp;select USER() into vUser;
+      <br>&emsp;&emsp;INSERT into contacts_audit( contact_id,deleted_date,deleted_by)VALUES( OLD.contact_id,SYSDATE(),vUser );
+      <br>end;
+         </p><br>
+         <h4>Invoking Trigger:</h4><br>
+         <p class="boxed">
+         	insert into contacts values (1, "Bond", "Ruskin",str_to_date ("19-08-1995", "%d-%m-%Y"),str_to_date ("27-04-2018", "%d-%m-%Y"), "xyz");
+<br>delete from contacts where last_name="Bond"; 
+		</p><br>
+         <h4>OUTPUT:</h4><br>
+         <p class="boxed">
+         	select *from contacts_audit;
+		<br>+------------+--------------+----------------+
+		<br>| contact_id | deleted_date | deleted_by &emsp;&ensp;   |
+		<br>+------------+--------------+----------------+
+		<br>|   1 &emsp;&emsp;&emsp;&emsp;&ensp;| 2019-05-11&emsp;   | root@localhost |
+		<br>+------------+--------------+----------------+
+		<br>1 row in set (0.0007 sec) 
+         </p><br><br></main></div>
+         
+         <div class="content">
+    <main>
+      <div class="container">
+   <div class="row">
+      <div class="neons1 col-12">
+         <h5><em>6. After Delete Trigger:</em></h5>
+      </div>
+   </div>
+</div><br><br>
+        <section>
+  		 This trigger is invoked after a delete occurs, or after a delete operation is implemented.<br>EXAMPLE:<br>Tables:<br></section>
+  		 <p class="boxed">
+        	 create table contacts (contact_id int (11) NOT NULL AUTO_INCREMENT,last_name VARCHAR (30) NOT NULL, first_name VARCHAR (25),birthday DATE,created_date DATE, created_by VARCHAR (30),CONSTRAINT contacts_pk PRIMARY KEY (contact_id));
+			<br>create table contacts_audit (contact_id integer, deleted_date date, deleted_by varchar(20));            
+         </p><br>
+        <h4>Creating Trigger:</h4><br>
+         <p class="boxed">
+         	create trigger contacts_after_delete
+      <br>&emsp;-> after delete on contacts
+      <br>&emsp;-> for each row
+      <br>&emsp;-> begin
+      <br>&emsp;&emsp;-> DECLARE vUser varchar(50); 
+      <br>&emsp;&emsp;SELECT USER() into vUser;
+      <br>&emsp;&emsp;INSERT into contacts_audit( contact_id,deleted_date,deleted_by)VALUES( OLD.contact_id,SYSDATE(), vUser );
+      <br>-> end;
+         </p><br>
+         <h4>Invoking Trigger By Insserting Values:</h4><br>
+         <p class="boxed">
+         	insert into contacts values (1, "XYZ", "ABC",str_to_date ("19-08-1985", "%d-%m-%Y"),str_to_date ("23-07-2018", "%d-%m-%Y"), "xyz");
+			<br>delete from contacts where first_name="ABC"; 
+         </p><br>
+         <h4>OUTPUT:</h4><br>
+         <p class="boxed">
+         	select *from contacts_audit;
+         	<br>+------------+--------------+----------------+
+			<br>| contact_id | deleted_date | deleted_by  &emsp;&ensp;   |
+			<br>+------------+--------------+----------------+
+			<br>|  &ensp;1&emsp;&emsp;&emsp;&emsp; | 2019-05-11 &ensp;  | root@localhost&ensp;|
+			<br>+------------+--------------+----------------+
+			<br>1 row in set (0.0006 sec) 
+         </p></main></div>
+</body>
+</html>
